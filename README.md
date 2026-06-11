@@ -1,18 +1,25 @@
-# TOEFL AI Skills · Free v1.0
+# TOEFL AI Skills
 
-一套给 **Claude / Cursor / Windsurf / WorkBuddy** 用的托福备考 AI skills。
-**免费版先上手，付费版做闭环。** 复制到本地 skills 目录，重启 IDE，就能直接开始练。
+<p align="center">
+  <strong>Free v1.0 for Claude / Cursor / Windsurf / WorkBuddy</strong><br/>
+  托福备考 AI skills 免费版。复制到本地 skills 目录，重启 IDE，马上开练。
+</p>
 
-![WeChat QR](./assets/wechat-qr.jpg)
+<p align="center">
+  <img src="./assets/wechat-qr-only.jpg" alt="WeChat QR" width="180" />
+</p>
 
-> 想直接拿 **v4.0 完整版**：微信 `19138384041`，备注 **托福 v4**。  
-> 当前价格：**99 元 / 份**
+<p align="center">
+  想拿 <strong>v4.0 完整版</strong>：微信 <code>19138384041</code>，备注 <strong>托福 v4</strong>，当前 <strong>99 元 / 份</strong>
+</p>
 
 ---
 
 ## 这是什么
 
-这个仓库公开的是 **v1.0 免费引流版**，包含 3 个最小可用的托福 AI skills：
+这个仓库公开的是 **TOEFL AI Skills 免费版 v1.0**。核心目标很简单：让你先低门槛装上、先用起来、先判断这套训练方式适不适合自己。
+
+免费版包含 3 个最常用的托福训练 skills：
 
 | Skill | 作用 | 适合场景 |
 |------|------|---------|
@@ -20,7 +27,7 @@
 | `/toefl-writing` | 学术讨论写作批改、审题、练习 | 想改作文、想拆题 |
 | `/toefl-reading` | 阅读精读、错题拆解、同义替换提取 | 想分析为什么错 |
 
-这不是源码项目，也不是网站模板。**它就是能直接安装到 AI IDE 里的 prompt skill 包。**
+这不是网站源码，也不是复杂项目。它就是一套能直接装进 AI IDE 的 prompt skills。
 
 ---
 
@@ -31,21 +38,21 @@
 - Windsurf
 - WorkBuddy
 
-只要你的工具支持本地 skill / prompt 目录，这套结构就能直接复用。
+只要你的工具支持本地 skills / prompts 目录，这套结构就能直接使用。
 
 ---
 
 ## 免费版能做什么
 
-免费版主打一个 **先用上、先感受到专业度**：
+免费版主打一个：**先感受到训练质量，再决定要不要升级。**
 
-- `/toefl` 先问目标等级、考试时间、今天想练什么，再把你路由到对应模块
+- `/toefl` 先问目标等级、考试时间、今天想练什么，再路由到合适模块
 - `/toefl-writing` 按 **Development / Organization / Language Use / Task Fulfillment** 四维批改
-- `/toefl-reading` 按题型拆解错因，强制输出 **同义替换词表**
-- 全部内容 **零依赖、纯文本、无安装包、无数据库**
+- `/toefl-reading` 按题型拆解错因，固定输出 **同义替换词表**
+- 全部内容都是 **零依赖、纯文本、可直接复制**
 - 中文解释逻辑，保留必要英文术语
 
-如果你只想先试试“AI skill 到底值不值”，这个版本已经够你开箱。
+如果你现在只是想验证“AI skill 到底能不能真帮我备考”，这个版本已经够你上手。
 
 ---
 
@@ -75,11 +82,9 @@ Copy-Item -Recurse .\toefl, .\toefl-writing, .\toefl-reading $env:USERPROFILE\.c
 Copy-Item -Recurse .\toefl, .\toefl-writing, .\toefl-reading $env:USERPROFILE\.workbuddy\skills\
 ```
 
-Cursor / Windsurf 如果使用自定义 skills 目录，把这 3 个文件夹复制进去就行。
+Cursor / Windsurf 如果使用自定义 skills 目录，把这 3 个文件夹复制进去即可。
 
-### 3. 重启你的 IDE
-
-重启后直接输入：
+### 3. 重启 IDE
 
 ```text
 /toefl
@@ -128,7 +133,7 @@ toefl-ai-skills/
 ├── toefl/SKILL.md
 ├── toefl-writing/SKILL.md
 ├── toefl-reading/SKILL.md
-├── assets/wechat-qr.jpg
+├── assets/wechat-qr-only.jpg
 ├── README.md
 └── LICENSE
 ```
@@ -137,11 +142,12 @@ toefl-ai-skills/
 
 ---
 
-## v1.0 vs v4.0
+## 免费版 vs 完整版
 
-这个仓库只公开 **v1.0 免费版**。如果你想要更完整的训练闭环，升级到 **v4.0 付费版**。
+> 免费版适合先体验方法和训练逻辑。  
+> 完整版适合想把练习记录、错题追踪、能力趋势和完整科目训练都串起来的人。
 
-| 能力 | v1.0 免费版 | v4.0 付费版 |
+| 能力 | v1.0 免费版 | v4.0 完整版 |
 |------|------------|------------|
 | Skills 数量 | 3 个 | 7 个 |
 | 写作批改 | 学术讨论 | 学术讨论 + 句子重组 + 电邮写作 |
@@ -155,28 +161,26 @@ toefl-ai-skills/
 | 进度可视化 | 不包含 | 趋势图 / 雷达图 / 错题热力图 |
 | 备份恢复 | 不包含 | 支持 backup / restore |
 
-**一句话区别：**
-免费版负责你先用起来。付费版负责把训练记录、错题数据、能力趋势、完整学科都串成闭环。
-
 ---
 
 ## 升级 v4.0
 
-如果你要的是更像“托福 AI 教练系统”的版本，而不是 3 个基础 skill，直接走这里：
+如果你想要的不是单次问答，而是一套更完整的托福训练系统，可以直接升级到 **v4.0 完整版**。
 
-- **微信**：`19138384041`
-- **备注**：`托福 v4`
-- **价格**：`99 元 / 份`
-- **交付**：完整 zip 包 + 安装说明
+<p align="center">
+  <img src="./assets/wechat-qr-only.jpg" alt="WeChat QR" width="220" />
+</p>
 
-![WeChat QR](./assets/wechat-qr.jpg)
+<p align="center">
+  微信 <code>19138384041</code> ｜ 备注 <strong>托福 v4</strong> ｜ <strong>99 元 / 份</strong>
+</p>
 
-适合这些人：
+完整版更适合这些情况：
 
-- 想要 **口语 / 听力 / 词汇 / Dashboard** 全覆盖
-- 想把练习记录、错题标签、趋势变化沉淀下来
-- 不想每次都从零开始对话
-- 想把 AI 从“陪聊”变成“训练系统”
+- 你想把 **口语 / 听力 / 词汇 / Dashboard** 一次补齐
+- 你希望把练习记录、错题标签、趋势变化沉淀下来
+- 你不想每次都从零开始对话
+- 你想让 AI 更像训练系统，而不只是临时答疑工具
 
 ---
 
@@ -184,19 +188,15 @@ toefl-ai-skills/
 
 ### 适合 2026 新制 TOEFL 吗？
 
-适合。免费版和付费版的文案都按 **2026 新制 TOEFL** 去设计，免费版覆盖基础写作与阅读训练，付费版再补全完整题型。
+适合。免费版和完整版都按 **2026 新制 TOEFL** 去设计。免费版覆盖基础写作与阅读训练，完整版进一步补全完整题型和训练闭环。
 
 ### 买完发什么？
 
 发完整压缩包和安装说明。Windows / macOS / Linux 都能装。
 
-### 为什么免费版只放 3 个？
+### 为什么免费版先放 3 个？
 
-因为这个仓库的目标是 **低门槛试用 + 高质量引流**。把所有核心资产全摊开，只会把你我都变成慈善家。
-
-### 我可以自己改吗？
-
-可以。免费版是 MIT License，拿去改、拿去学、拿去二开都行。
+因为大多数人第一次接触这类 AI skill，更需要的是 **先快速装上、先体验有效性**，而不是一上来就面对一整套复杂功能。免费版先解决“能不能用”，完整版再解决“能不能长期高效用”。
 
 ---
 
@@ -204,4 +204,4 @@ toefl-ai-skills/
 
 提 issue：<https://github.com/Duncan-maker117/toefl-ai-skills/issues>
 
-如果你是来买完整版的，别绕路提 issue，直接扫上面的二维码就行。
+如果你是想直接拿完整版，扫上面的二维码会更快。
