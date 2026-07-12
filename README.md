@@ -1,214 +1,275 @@
-# TOEFL AI Skills
+<div align="center">
 
-<p align="center">
-  <strong>Free v1.0 for Claude / Cursor / Windsurf / WorkBuddy</strong><br/>
-  托福备考 AI skills 免费版。复制到本地 skills 目录，重启 IDE，马上开练。
-</p>
+# 🎯 TOEFL AI Skill — 2026 新制托福备考 AI 教练
 
-<p align="center">
-  <img src="./assets/wechat-qr-only.jpg" alt="WeChat QR" width="180" />
-</p>
+</div>
 
-<p align="center">
-  想拿 <strong>v4.0 完整版</strong>：微信 <code>19138384041</code>，备注 <strong>托福 v4</strong>，当前 <strong>99 元 / 份</strong>
-</p>
+**TOEFL AI Skill** 是一个基于 AI 的 **托福 iBT 备考教练系统**，支持 **2026 新制自动适配、四科摸底诊断、写作批改、口语训练、阅读分析、听力练习、词汇学习、Dashboard 复盘**。/**TOEFL AI Skill** is an **AI-powered TOEFL iBT prep coach** with **2026 new-format support, four-skill diagnostic, writing correction, speaking practice, reading analysis, listening training, vocabulary learning, and Dashboard review**.
 
----
+> 🎁 v1.0 Lite 永久免费开源 · 🚀 v4.0 Pro 完整版加微信 `19138384041` 获取
+>
+> 每天 2 小时，自学托福不乱练。
 
-## 这是什么
+<div align="center">
 
-这个仓库公开的是 **TOEFL AI Skills 免费版 v1.0**。核心目标很简单：让你先低门槛装上、先用起来、先判断这套训练方式适不适合自己。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TOEFL iBT 2026](https://img.shields.io/badge/TOEFL-iBT_2026_新制-blueviolet)](https://www.ets.org/toefl)
+[![Version](https://img.shields.io/badge/version-4.0_Pro%20%7C%201.0_Lite-success)](#-版本对比)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Stars](https://img.shields.io/github/stars/Duncan-maker117/toefl-ai-skill?style=social)](../../stargazers)
+[![Forks](https://img.shields.io/github/forks/Duncan-maker117/toefl-ai-skill?style=social)](../../network/members)
+[![Made With](https://img.shields.io/badge/Made_with-Claude_+_WorkBuddy-ff6b6b)](#-致谢)
 
-免费版包含 3 个最常用的托福训练 skills：
+[English](#-english) | [简体中文](#-简体中文) | [功能模块](#-功能模块) | [快速开始](#-快速开始) | [版本对比](#-版本对比) | [微信咨询](#-联系作者)
 
-| Skill | 作用 | 适合场景 |
-|------|------|---------|
-| `/toefl` | 托福备考总入口，负责摸底、路由、给训练建议 | 不知道先练什么 |
-| `/toefl-writing` | 学术讨论写作批改、审题、练习 | 想改作文、想拆题 |
-| `/toefl-reading` | 阅读精读、错题拆解、同义替换提取 | 想分析为什么错 |
-
-这不是网站源码，也不是复杂项目。它就是一套能直接装进 AI IDE 的 prompt skills。
+</div>
 
 ---
 
-## 适用平台
+## 🌟 这是什么？
 
-- Claude Code
-- Cursor
-- Windsurf
-- WorkBuddy
+**TOEFL AI Skill** 是一套跑在 AI 客户端（Claude / WorkBuddy / Cursor / Codex CLI）里的 **托福备考 AI 教练系统**。
 
-只要你的工具支持本地 skills / prompts 目录，这套结构就能直接使用。
+它不是英语课、不是题库、不是机经。它是**一个严格但公正的托福老师**——
 
----
+- ✅ **数据驱动**：用 CEFR 等级分（1.0-6.0）管理你的备考进度
+- ✅ **智能路由**：先摸底，自动把每天 2 小时拆给最弱的一科
+- ✅ **闭环训练**：训练 → 记录 → Dashboard 复盘 → 明日计划
+- ✅ **2026 新制适配**：67-85 分钟新题型、MST 自适应、1.0-6.0 等级分全支持
 
-## 免费版能做什么
-
-免费版主打一个：**先感受到训练质量，再决定要不要升级。**
-
-- `/toefl` 先问目标等级、考试时间、今天想练什么，再路由到合适模块
-- `/toefl-writing` 按 **Development / Organization / Language Use / Task Fulfillment** 四维批改
-- `/toefl-reading` 按题型拆解错因，固定输出 **同义替换词表**
-- 全部内容都是 **零依赖、纯文本、可直接复制**
-- 中文解释逻辑，保留必要英文术语
-
-如果你现在只是想验证“AI skill 到底能不能真帮我备考”，这个版本已经够你上手。
+> 🎁 **v1.0 Lite 免费开源**——你看到的就是。
+> 🚀 **v4.0 Pro** 完整版覆盖 7 大模块：添加微信 `19138384041` 获取。
 
 ---
 
-## 安装
+## 🎬 30 秒看懂系统闭环
 
-### 1. 克隆仓库
-
-```bash
-git clone https://github.com/Duncan-maker117/toefl-ai-skills.git
-cd toefl-ai-skills
 ```
-
-### 2. 复制到你的 skills 目录
-
-```bash
-# macOS / Linux
-cp -r toefl toefl-writing toefl-reading ~/.claude/skills/
-```
-
-```powershell
-# Windows PowerShell - Claude Code
-Copy-Item -Recurse .\toefl, .\toefl-writing, .\toefl-reading $env:USERPROFILE\.claude\skills\
-```
-
-```powershell
-# Windows PowerShell - WorkBuddy
-Copy-Item -Recurse .\toefl, .\toefl-writing, .\toefl-reading $env:USERPROFILE\.workbuddy\skills\
-```
-
-Cursor / Windsurf 如果使用自定义 skills 目录，把这 3 个文件夹复制进去即可。
-
-### 3. 重启 IDE
-
-```text
-/toefl
+                ┌─────────────────────┐
+                │  🎯 目标分 + 考试日  │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │   🔍 四科摸底诊断   │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │  🚦 智能路由（最弱科）│
+                └────┬────┬────┬──────┘
+                     ▼    ▼    ▼    ▼
+                🗣️口语 ✍️写作 📖阅读 🎧听力
+                     │    │    │    │
+                     └────┴────┴────┘
+                           ▼
+                ┌─────────────────────┐
+                │  💾 训练数据落盘    │
+                │  ~/.toefl/*.json    │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │  📊 Dashboard 复盘  │
+                │  趋势 + 错词 + 拼写 │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │  📅 明日计划生成    │
+                └─────────────────────┘
 ```
 
 ---
 
-## 怎么用
+## ✨ 功能模块
 
-### 场景 1：先摸底，再分流
+| 模块 | v1.0 Lite（开源） | v4.0 Pro |
+|------|:-----------------:|:--------:|
+| 🔍 **摸底路由** | ✅ CEFR 等级换算 | ✅ + 4 科动态诊断 |
+| ✍️ **写作批改** | ✅ 学术讨论写作 | ✅ + 句子重组 + 电邮 + 学术讨论 |
+| 📖 **阅读分析** | ✅ 学术短文 | ✅ + Complete the Words + 日常阅读 |
+| 🗣️ **口语训练** | — | ✅ 跟读句子 ×7 + 面试问答 ×4 |
+| 🎧 **听力训练** | — | ✅ 听后选答 + 对话 + 公告 + 学术短讲 |
+| 📚 **词汇系统** | — | ✅ 错词本 + 间隔重复 + 拼写专项 |
+| 📊 **Dashboard** | — | ✅ 4 科趋势 + 弱项雷达 + 日历热力图 |
+| 💾 **数据持久化** | — | ✅ `~/.toefl/` 跨会话记忆 |
 
-```text
-你：/toefl
-AI：先问你目标等级、考试时间、今天想练什么
-AI：再自动路由到 /toefl-writing 或 /toefl-reading
+---
+
+## 🆕 2026 新制 TOEFL iBT 适配
+
+> ETS 自 **2026 年 1 月 21 日**起对 TOEFL iBT 进行全面改制，本系统已 100% 适配。
+
+| 维度 | 旧制 (2023-2025) | **新制 (2026 起)** |
+|------|------------------|-------------------|
+| 总时长 | ~116 分钟 | **~67-85 分钟** ⚡ |
+| 科目顺序 | R → L → S → W | **R → L → W → S** |
+| 计分制 | 0-120 | **1.0-6.0 等级分**（CEFR 直接映射）|
+| 自适应 | 固定 | **阅读+听力 MST 多阶段自适应** |
+| 阅读 | 长文章 ×3-4 | Complete the Words + 日常阅读 + 学术短文 |
+| 听力 | 长讲座 ×3-4 | 听后选答 + 对话 + 公告 + 学术短讲 |
+| 写作 | 综合写作 + 讨论 | **句子重组 ×10 + 电邮 + 学术讨论** |
+| 口语 | Task 1-4 | **跟读句子 ×7 + 面试式问答 ×4** |
+
+---
+
+## 🚀 快速开始
+
+### 安装 v1.0 Lite（免费开源）
+
+#### 方式 A：Claude / WorkBuddy 用户
+把 `toefl-v1/` 文件夹复制到：
+- **Claude**：项目根目录的 `skills/` 下
+- **WorkBuddy**：`~/.workbuddy/skills/` 下
+
+然后在对话中输入：
+```
+/toefl-v1
+```
+或直接说「托福 lite」「托福备考」。
+
+#### 方式 B：Cursor / Codex CLI / 其他 AI 客户端
+将 `toefl/SKILL.md` 内容粘贴到项目根的 `AGENTS.md` 或 `CLAUDE.md`，作为系统提示词加载。
+
+### 系统要求
+- 支持自定义 Skill 的 AI 客户端（Claude 3.5+ / WorkBuddy / Cursor / Codex CLI）
+- 无需 API Key（取决于你使用的客户端）
+- 数据目录：v4.0 Pro 自动创建 `~/.toefl/`
+
+---
+
+## 📖 使用示例
+
+### 1️⃣ 第一次使用
+> **你**：/toefl-v1
+>
+> **AI**：你好，我是你的托福教练。开始之前我要先问 3 个问题：
+> 1. 你的目标等级是多少？（1.0-6.0）
+> 2. 考试日期？
+> 3. 当前水平？（四级/六级/雅思对标）
+
+### 2️⃣ 写作批改
+> **你**：帮我批改这篇学术讨论写作
+> [粘贴你的回复]
+>
+> **AI**：等级评分：4.0 → 改进建议 3 条 → 高分句型 2 句 → 错词加入词库
+
+### 3️⃣ 阅读分析
+> **你**：分析这篇学术短文
+> [粘贴短文]
+>
+> **AI**：文章结构拆解 → 核心观点 → 长难句 ×3 → 学术词汇表
+
+---
+
+## 📁 项目结构
+
+```
+toefl-ai-skill/
+├── README.md                          # 你正在看的
+├── LICENSE                            # MIT
+├── toefl-v1/                          # v1.0 Lite Skill（开源）
+│   └── SKILL.md
+├── toefl-v4/                          # v4.0 Pro Skill（付费）
+│   └── SKILL.md
+├── docs/
+│   ├── 【展示首页】-TOEFL AI Skill 备考系统.md
+│   ├── 【展示白板】-TOEFL AI Skill 本地闭环.canvas
+│   └── 2026-新制改制说明.md
+├── examples/
+│   ├── writing-sample.md
+│   ├── reading-sample.md
+│   └── dashboard-preview.png
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
-### 场景 2：直接批改作文
+---
 
-```text
-你：/toefl-writing
-你：[粘贴题目 + 你的作文]
-AI：
-- 四维评分
-- 逐句指出问题
-- 给提分优先级
-```
+## 🤝 贡献指南
 
-### 场景 3：分析阅读错题
+欢迎 PR！特别是：
+- 📝 错词本扩充（高频托福学术词汇）
+- 🐛 反馈 2026 新制题型的训练效果
+- 🌐 翻译 README 到更多语言
+- 📊 分享你的 Dashboard 复盘数据
 
-```text
-你：/toefl-reading
-你：[粘贴文章 + 题目 + 你的答案 + 标准答案]
-AI：
-- 逐题拆错因
-- 给定位句
-- 提取同义替换词表
-```
+提交前请先开 Issue 讨论。
 
 ---
 
-## 仓库结构
+## 📜 许可证
 
-```text
-toefl-ai-skills/
-├── toefl/SKILL.md
-├── toefl-writing/SKILL.md
-├── toefl-reading/SKILL.md
-├── assets/wechat-qr-only.jpg
-├── README.md
-└── LICENSE
-```
+本项目采用 **MIT 许可证** — 详见 [LICENSE](LICENSE) 文件。
 
-每个 skill 都是一个文件夹 + 一个 `SKILL.md`。平台通过 frontmatter 里的 `name` 和 `description` 识别它。
+> 注意：v1.0 Lite 永久免费开源；v4.0 Pro 为付费版本（添加微信获取）。
 
 ---
 
-## 免费版 vs 完整版
+## 💬 联系作者
 
-> 🟦 **免费版**：适合先体验方法和训练逻辑。  
-> 🟧 **完整版**：适合想把练习记录、错题追踪、能力趋势和完整科目训练都串起来的人。
-
-<p align="center">
-  <strong>🟦 免费版 = 先装上、先体验、先验证有效性</strong><br/>
-  <strong>🟧 完整版 = 诊断 + 训练 + 记录 + 复盘 的完整闭环</strong>
-</p>
-
-| 能力 | 🟦 v1.0 免费版 | 🟧 v4.0 完整版 |
-|------|---------------|---------------|
-| Skills 数量 | 3 个 | 8 个 |
-| 总入口路由 | ✅ `/toefl` | ✅ `/toefl` |
-| 诊断规划 | ❌ 不包含 | ✅ `/toefl-diagnose` |
-| 写作批改 | 学术讨论 | 学术讨论 + 句子重组 + 电邮写作 |
-| 阅读训练 | 学术短文 | 学术短文 + 日常文本 + MST 适配 |
-| 口语训练 | ❌ 不包含 | ✅ `/toefl-speaking` |
-| 听力训练 | ❌ 不包含 | ✅ `/toefl-listening` |
-| 词汇训练 | ❌ 不包含 | ✅ `/toefl-vocab` |
-| 进度看板 | ❌ 不包含 | ✅ `/toefl-dashboard` |
-| 跨会话记忆 | ❌ 不包含 | ✅ `~/.toefl/` 数据持久化 |
-| 错题追踪 | 单次分析 | 自动聚合高频错误 |
-| 进度可视化 | ❌ 不包含 | 趋势图 / 雷达图 / 错题热力图 |
-| 备份恢复 | ❌ 不包含 | 支持 backup / restore |
+- **微信**：`19138384041`（备注「TOEFL Pro」获取 v4.0 完整版）
+- **GitHub Issues**：[本仓库 Issues](../../issues)
+- **品牌**：启扬有道
 
 ---
 
-## 升级 v4.0
+## 🙏 致谢
 
-如果你想要的不是单次问答，而是一套更完整的托福训练系统，可以直接升级到 **v4.0 完整版**。
-
-<p align="center">
-  <img src="./assets/wechat-qr-only.jpg" alt="WeChat QR" width="220" />
-</p>
-
-<p align="center">
-  微信 <code>19138384041</code> ｜ 备注 <strong>托福 v4</strong> ｜ <strong>99 元 / 份</strong>
-</p>
-
-完整版更适合这些情况：
-
-- 你想把 **口语 / 听力 / 词汇 / Dashboard** 一次补齐
-- 你希望把练习记录、错题标签、趋势变化沉淀下来
-- 你不想每次都从零开始对话
-- 你想让 AI 更像训练系统，而不只是临时答疑工具
+- 灵感来源：[YANZHANLIN/ielts-claude-skills](https://github.com/YANZHANLIN/ielts-claude-skills)
+- 数据驱动方法论：CEFR 欧洲语言共同参考框架
+- AI 客户端：Claude / WorkBuddy / Cursor / Codex CLI
 
 ---
 
-## FAQ
+<div align="center">
 
-### 适合 2026 新制 TOEFL 吗？
+### ⭐ 如果这个项目帮到了你，请点一个 Star — 这是开源作者最大的动力
 
-适合。免费版和完整版都按 **2026 新制 TOEFL** 去设计。免费版覆盖基础写作与阅读训练，完整版进一步补全完整题型和训练闭环。
+[![Star History Chart](https://img.shields.io/github/stars/Duncan-maker117/toefl-ai-skill?style=social)](../../stargazers)
 
-### 买完发什么？
+**Made with ❤️ by 启扬有道 · Duncan (Yang Lu)**
 
-发完整压缩包和安装说明。Windows / macOS / Linux 都能装。
-
-### 为什么免费版先放 3 个？
-
-因为大多数人第一次接触这类 AI skill，更需要的是 **先快速装上、先体验有效性**，而不是一上来就面对一整套复杂功能。免费版先解决“能不能用”，完整版再解决“能不能长期高效用”。
+</div>
 
 ---
 
-## 反馈
+<a name="-english"></a>
 
-提 issue：<https://github.com/Duncan-maker117/toefl-ai-skills/issues>
+## 🌐 English
 
-如果你是想直接拿完整版，扫上面的二维码会更快。
+# TOEFL AI Skill — TOEFL iBT AI Coach System
+
+**A data-driven TOEFL iBT prep system running inside your AI client (Claude / WorkBuddy / Cursor / Codex CLI).**
+
+### What's inside?
+- 🎯 **CEFR-aligned scoring** (1.0-6.0, ETS 2026 new format)
+- 🔍 **Diagnostic routing** — auto-assigns daily 2h to your weakest skill
+- ✍️ **Writing** (Academic Discussion / Sentence Build-up / Email)
+- 📖 **Reading** (Complete the Words / Daily Reading / Academic Passages)
+- 🗣️ **Speaking** (Read Aloud ×7 + Interview Q&A ×4)
+- 🎧 **Listening** (听后选答 + Dialogues + Announcements + Mini-lectures)
+- 📚 **Vocabulary** + 📊 **Dashboard**
+
+### 2026 New TOEFL iBT Format Support
+ETS redesigned TOEFL iBT starting **Jan 21, 2026**:
+- ⏱️ 67-85 min (down from ~116 min)
+- 📐 1.0-6.0 proficiency scale (mapped to CEFR)
+- 🧠 MST adaptive in Reading & Listening
+- 🔄 Order: R → L → W → S
+
+### Quick Start
+1. Copy `toefl-v1/` to your AI client's `skills/` folder
+2. Type `/toefl-v1` or "TOEFL prep"
+3. Answer 3 onboarding questions (target score / test date / current level)
+
+### Versions
+- **v1.0 Lite (this repo)** — Free, MIT, writing + reading + routing
+- **v4.0 Pro** — All 7 modules, Dashboard, persistent data · WeChat: `19138384041`
+
+### Keywords (for search)
+`toefl` `toefl-ibt` `toefl-2026` `toefl-cefr` `toefl-prep` `toefl-ai-coach`
+`toefl-writing` `toefl-speaking` `toefl-listening` `toefl-reading`
+`toefl-vocabulary` `ai-tutor` `english-learning` `study-abroad`
+`claude-skill` `anthropic-skill` `workbuddy`
+
+### License
+MIT — see [LICENSE](LICENSE)
