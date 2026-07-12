@@ -10,6 +10,13 @@
 >
 > 每天 2 小时，自学托福不乱练。
 
+<p align="center">
+  <img src="./assets/wechat-qr-only.jpg" alt="微信 19138384041" width="180" />
+</p>
+<p align="center">
+  <strong>扫码添加微信，备注「托福 v4」获取完整版</strong>
+</p>
+
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
